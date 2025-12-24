@@ -1,0 +1,87 @@
+[
+  {
+    "question": "Which club did Cristiano Ronaldo join immediately after leaving Manchester United in 2009?",
+    "options": [
+      "Real Madrid",
+      "Juventus",
+      "Sporting CP",
+      "Paris Saint-Germain"
+    ],
+    "answer": "Real Madrid",
+    "category": "football",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which country won the 1998 FIFA World Cup?",
+    "options": ["France", "Brazil", "Italy", "Germany"],
+    "answer": "France",
+    "category": "football",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which manager led Chelsea to their first UEFA Champions League title in 2012?",
+    "options": [
+      "Roberto Di Matteo",
+      "José Mourinho",
+      "Carlo Ancelotti",
+      "Antonio Conte"
+    ],
+    "answer": "Roberto Di Matteo",
+    "category": "football",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which African nation has won the Africa Cup of Nations the most times?",
+    "options": ["Egypt", "Cameroon", "Nigeria", "Ghana"],
+    "answer": "Egypt",
+    "category": "football",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which player won the Ballon d'Or in 2007?",
+    "options": ["Kaká", "Cristiano Ronaldo", "Lionel Messi", "Ronaldinho"],
+    "answer": "Kaká",
+    "category": "football",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which club did Thierry Henry join after leaving Arsenal in 2007?",
+    "options": ["Barcelona", "Juventus", "Real Madrid", "Inter Milan"],
+    "answer": "Barcelona",
+    "category": "football",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which country won the UEFA European Championship in 2004?",
+    "options": ["Greece", "Portugal", "France", "Italy"],
+    "answer": "Greece",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the top scorer of the 2014 FIFA World Cup?",
+    "options": ["James Rodríguez", "Thomas Müller", "Neymar", "Lionel Messi"],
+    "answer": "James Rodríguez",
+    "category": "football",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which club is known as 'Die Roten' in the Bundesliga?",
+    "options": ["Bayern Munich", "RB Leipzig", "Bayer Leverkusen", "Mainz 05"],
+    "answer": "Bayern Munich",
+    "category": "football",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which manager introduced the 'tiki-taka' style that dominated European football with Barcelona?",
+    "options": [
+      "Pep Guardiola",
+      "Johan Cruyff",
+      "Luis Enrique",
+      "Frank Rijkaard"
+    ],
+    "answer": "Pep Guardiola",
+    "category": "football",
+    "difficulty": "medium"
+  }
+]
