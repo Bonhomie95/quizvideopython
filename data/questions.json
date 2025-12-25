@@ -1,5 +1,551 @@
 [
   {
+    "question": "Who defeated Pete Sampras in his final professional singles match at the 2002 US Open?",
+    "options": [
+      "Roger Federer",
+      "Andre Agassi",
+      "Lleyton Hewitt",
+      "Marat Safin"
+    ],
+    "answer": "Roger Federer",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player won the longest Wimbledon final in history by match duration?",
+    "options": [
+      "Novak Djokovic",
+      "Roger Federer",
+      "Rafael Nadal",
+      "Andy Murray"
+    ],
+    "answer": "Novak Djokovic",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the youngest male player to win a Grand Slam singles title in the Open Era?",
+    "options": [
+      "Michael Chang",
+      "Boris Becker",
+      "Mats Wilander",
+      "Rafael Nadal"
+    ],
+    "answer": "Michael Chang",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player ended Ivan Lendl’s streak of eight consecutive US Open finals appearances?",
+    "options": [
+      "Boris Becker",
+      "Stefan Edberg",
+      "John McEnroe",
+      "Andre Agassi"
+    ],
+    "answer": "Boris Becker",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who won the men’s singles title at the 1996 Australian Open?",
+    "options": [
+      "Boris Becker",
+      "Pete Sampras",
+      "Thomas Muster",
+      "Michael Chang"
+    ],
+    "answer": "Boris Becker",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player holds the record for most consecutive weeks ranked world No.1 in the Open Era?",
+    "options": [
+      "Roger Federer",
+      "Novak Djokovic",
+      "Pete Sampras",
+      "Ivan Lendl"
+    ],
+    "answer": "Novak Djokovic",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the first player to defeat Rafael Nadal at Roland Garros?",
+    "options": [
+      "Robin Söderling",
+      "Novak Djokovic",
+      "Roger Federer",
+      "Andy Murray"
+    ],
+    "answer": "Robin Söderling",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player won the men’s singles gold medal at the 2012 London Olympics?",
+    "options": [
+      "Andy Murray",
+      "Novak Djokovic",
+      "Roger Federer",
+      "Juan Martín del Potro"
+    ],
+    "answer": "Andy Murray",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the runner-up to Stan Wawrinka in the 2014 Australian Open final?",
+    "options": [
+      "Rafael Nadal",
+      "Novak Djokovic",
+      "Roger Federer",
+      "Andy Murray"
+    ],
+    "answer": "Rafael Nadal",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player won the longest singles match in Grand Slam history by time played?",
+    "options": [
+      "John Isner",
+      "Nicolas Mahut",
+      "Kevin Anderson",
+      "Andy Roddick"
+    ],
+    "answer": "John Isner",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who defeated Novak Djokovic in the final of the 2016 US Open?",
+    "options": [
+      "Stan Wawrinka",
+      "Andy Murray",
+      "Juan Martín del Potro",
+      "Kei Nishikori"
+    ],
+    "answer": "Stan Wawrinka",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player won the men’s singles title at the 1991 French Open?",
+    "options": [
+      "Jim Courier",
+      "Andre Agassi",
+      "Stefan Edberg",
+      "Michael Chang"
+    ],
+    "answer": "Jim Courier",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the first male player to win Grand Slam titles on three different surfaces in the Open Era?",
+    "options": ["Mats Wilander", "Ivan Lendl", "Boris Becker", "Andre Agassi"],
+    "answer": "Mats Wilander",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player ended Roger Federer’s record streak of consecutive Grand Slam finals in 2010?",
+    "options": [
+      "Jo-Wilfried Tsonga",
+      "Novak Djokovic",
+      "Robin Söderling",
+      "Andy Murray"
+    ],
+    "answer": "Jo-Wilfried Tsonga",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who won the men’s singles title at the 2003 Australian Open?",
+    "options": [
+      "Andre Agassi",
+      "Roger Federer",
+      "Andy Roddick",
+      "Lleyton Hewitt"
+    ],
+    "answer": "Andre Agassi",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player has the most career titles without ever reaching world No.1?",
+    "options": [
+      "David Ferrer",
+      "Guillermo Vilas",
+      "Andy Roddick",
+      "Tomáš Berdych"
+    ],
+    "answer": "Guillermo Vilas",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who defeated Rafael Nadal in the final of the 2014 Australian Open?",
+    "options": [
+      "Stan Wawrinka",
+      "Novak Djokovic",
+      "Andy Murray",
+      "Roger Federer"
+    ],
+    "answer": "Stan Wawrinka",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player won the men’s singles title at the 1988 US Open?",
+    "options": ["Mats Wilander", "Ivan Lendl", "Boris Becker", "Stefan Edberg"],
+    "answer": "Mats Wilander",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the oldest men’s singles Grand Slam champion in the Open Era?",
+    "options": [
+      "Ken Rosewall",
+      "Roger Federer",
+      "Novak Djokovic",
+      "Jimmy Connors"
+    ],
+    "answer": "Ken Rosewall",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player defeated Novak Djokovic in the 2021 US Open final, preventing a calendar Grand Slam?",
+    "options": [
+      "Daniil Medvedev",
+      "Alexander Zverev",
+      "Stefanos Tsitsipas",
+      "Matteo Berrettini"
+    ],
+    "answer": "Daniil Medvedev",
+    "category": "tennis",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player scored the first basket in NBA history?",
+    "options": ["Ossie Schectman", "George Mikan", "Joe Fulks", "Bob Davies"],
+    "answer": "Ossie Schectman",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which team drafted Kobe Bryant in the 1996 NBA Draft?",
+    "options": [
+      "Charlotte Hornets",
+      "Los Angeles Lakers",
+      "Philadelphia 76ers",
+      "New Jersey Nets"
+    ],
+    "answer": "Charlotte Hornets",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the Finals MVP of the 2004 NBA Finals?",
+    "options": [
+      "Chauncey Billups",
+      "Ben Wallace",
+      "Richard Hamilton",
+      "Tim Duncan"
+    ],
+    "answer": "Chauncey Billups",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player recorded the first official quadruple-double in NBA history?",
+    "options": [
+      "Nate Thurmond",
+      "Hakeem Olajuwon",
+      "David Robinson",
+      "Alvin Robertson"
+    ],
+    "answer": "Nate Thurmond",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which NBA team did Dirk Nowitzki play against in his final career game?",
+    "options": [
+      "San Antonio Spurs",
+      "Memphis Grizzlies",
+      "Phoenix Suns",
+      "Denver Nuggets"
+    ],
+    "answer": "Phoenix Suns",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the head coach of the Seattle SuperSonics when they won the 1979 NBA Championship?",
+    "options": ["Lenny Wilkens", "Jack Ramsay", "Bill Russell", "Red Holzman"],
+    "answer": "Lenny Wilkens",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player holds the record for most steals in a single NBA game?",
+    "options": [
+      "Larry Kenon",
+      "Michael Jordan",
+      "Alvin Robertson",
+      "Scottie Pippen"
+    ],
+    "answer": "Larry Kenon",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which team ended the Chicago Bulls' 72–10 season in the 1996 NBA Playoffs?",
+    "options": [
+      "Orlando Magic",
+      "Seattle SuperSonics",
+      "New York Knicks",
+      "Indiana Pacers"
+    ],
+    "answer": "Orlando Magic",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player scored 8 points in 9 seconds during a 1995 playoff game?",
+    "options": ["Reggie Miller", "Ray Allen", "Kobe Bryant", "Allen Iverson"],
+    "answer": "Reggie Miller",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which NBA Finals featured the only Game 7 buzzer-beater in league history?",
+    "options": ["1962 Finals", "1969 Finals", "1974 Finals", "2010 Finals"],
+    "answer": "1969 Finals",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player won NBA MVP without starting every game in the regular season?",
+    "options": [
+      "Bill Walton",
+      "Kareem Abdul-Jabbar",
+      "Magic Johnson",
+      "Tim Duncan"
+    ],
+    "answer": "Bill Walton",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which team drafted Giannis Antetokounmpo in 2013?",
+    "options": [
+      "Milwaukee Bucks",
+      "Atlanta Hawks",
+      "Boston Celtics",
+      "Dallas Mavericks"
+    ],
+    "answer": "Milwaukee Bucks",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the youngest player to ever score 10,000 NBA career points?",
+    "options": [
+      "LeBron James",
+      "Kevin Durant",
+      "Kobe Bryant",
+      "Carmelo Anthony"
+    ],
+    "answer": "LeBron James",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player holds the record for most minutes played in a single NBA game?",
+    "options": [
+      "Dale Ellis",
+      "Wilt Chamberlain",
+      "Oscar Robertson",
+      "Jerry West"
+    ],
+    "answer": "Dale Ellis",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which franchise won the very first NBA championship in 1947?",
+    "options": [
+      "Philadelphia Warriors",
+      "Boston Celtics",
+      "Chicago Stags",
+      "New York Knicks"
+    ],
+    "answer": "Philadelphia Warriors",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player recorded the first 20-assist game in NBA Finals history?",
+    "options": [
+      "Magic Johnson",
+      "Isiah Thomas",
+      "John Stockton",
+      "Rajon Rondo"
+    ],
+    "answer": "Magic Johnson",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which NBA team has gone the longest without a Finals appearance?",
+    "options": [
+      "Los Angeles Clippers",
+      "Charlotte Hornets",
+      "Memphis Grizzlies",
+      "Minnesota Timberwolves"
+    ],
+    "answer": "Los Angeles Clippers",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player won the 1987 NBA Slam Dunk Contest?",
+    "options": [
+      "Michael Jordan",
+      "Dominique Wilkins",
+      "Spud Webb",
+      "Clyde Drexler"
+    ],
+    "answer": "Michael Jordan",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which NBA Finals series featured the lowest combined score in a Game 7?",
+    "options": ["1954 Finals", "1962 Finals", "1970 Finals", "1994 Finals"],
+    "answer": "1954 Finals",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player was nicknamed 'The Microwave' due to instant scoring bursts?",
+    "options": [
+      "Vinnie Johnson",
+      "Lou Williams",
+      "Jason Terry",
+      "Jamal Crawford"
+    ],
+    "answer": "Vinnie Johnson",
+    "category": "basketball",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player scored the winning goal in the 1990 European Cup final between AC Milan and Benfica?",
+    "options": [
+      "Frank Rijkaard",
+      "Marco van Basten",
+      "Ruud Gullit",
+      "Carlo Ancelotti"
+    ],
+    "answer": "Frank Rijkaard",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which club did Diego Milito play for immediately before joining Inter Milan in 2009?",
+    "options": ["Genoa", "Zaragoza", "Racing Club", "Atletico Madrid"],
+    "answer": "Genoa",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the captain of Italy during their 2006 FIFA World Cup final victory?",
+    "options": [
+      "Fabio Cannavaro",
+      "Alessandro Del Piero",
+      "Gennaro Gattuso",
+      "Francesco Totti"
+    ],
+    "answer": "Fabio Cannavaro",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which African club won the CAF Champions League in 2016?",
+    "options": ["Mamelodi Sundowns", "Al Ahly", "Zamalek", "TP Mazembe"],
+    "answer": "Mamelodi Sundowns",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which goalkeeper conceded the fewest goals at the 1994 FIFA World Cup?",
+    "options": [
+      "Claudio Taffarel",
+      "Gianluca Pagliuca",
+      "Thomas Ravelli",
+      "Michel Preud'homme"
+    ],
+    "answer": "Claudio Taffarel",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which club did Pep Guardiola manage immediately before joining Bayern Munich?",
+    "options": [
+      "Barcelona",
+      "Roma",
+      "Barcelona B",
+      "He was not managing any club"
+    ],
+    "answer": "He was not managing any club",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player assisted Andrés Iniesta's goal in the 2010 FIFA World Cup final?",
+    "options": ["Cesc Fàbregas", "Xavi", "David Silva", "Fernando Torres"],
+    "answer": "Cesc Fàbregas",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which club eliminated Real Madrid in the semifinals of the 2000–01 UEFA Champions League?",
+    "options": ["Bayern Munich", "Valencia", "Juventus", "Leeds United"],
+    "answer": "Bayern Munich",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Who was the manager of Greece when they won UEFA Euro 2004?",
+    "options": [
+      "Otto Rehhagel",
+      "Felix Magath",
+      "Jupp Heynckes",
+      "Berti Vogts"
+    ],
+    "answer": "Otto Rehhagel",
+    "category": "football",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which player scored Argentina’s last goal at the 1990 FIFA World Cup?",
+    "options": [
+      "Claudio Caniggia",
+      "Jorge Burruchaga",
+      "Diego Maradona",
+      "Gustavo Dezotti"
+    ],
+    "answer": "Gustavo Dezotti",
+    "category": "football",
+    "difficulty": "hard"
+  },
+
+  {
     "question": "Which club did Cristiano Ronaldo join immediately after leaving Manchester United in 2009?",
     "options": [
       "Real Madrid",
@@ -83,5 +629,175 @@
     "answer": "Pep Guardiola",
     "category": "football",
     "difficulty": "medium"
+  },
+  {
+    "question": "Which country was the first to grant women the right to vote at a national level?",
+    "options": ["New Zealand", "Finland", "Norway", "Australia"],
+    "answer": "New Zealand",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What was the original name of the city now known as Istanbul?",
+    "options": ["Byzantium", "Constantinople", "Nicomedia", "Ephesus"],
+    "answer": "Byzantium",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which empire first introduced a standardized road system across three continents?",
+    "options": [
+      "Roman Empire",
+      "Persian Empire",
+      "Ottoman Empire",
+      "Mongol Empire"
+    ],
+    "answer": "Persian Empire",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which country has changed its capital city the most times in modern history?",
+    "options": ["Nigeria", "Brazil", "Pakistan", "Kazakhstan"],
+    "answer": "Kazakhstan",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "The Treaty of Tordesillas in 1494 divided newly discovered lands between which two countries?",
+    "options": [
+      "Spain and Portugal",
+      "England and France",
+      "Spain and France",
+      "Portugal and Netherlands"
+    ],
+    "answer": "Spain and Portugal",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which ancient civilization is credited with the earliest known use of zero as a number?",
+    "options": ["Maya", "Babylonian", "Indian", "Egyptian"],
+    "answer": "Maya",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What was the primary language of administration in the Mughal Empire?",
+    "options": ["Persian", "Urdu", "Arabic", "Sanskrit"],
+    "answer": "Persian",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which country was formerly known as Upper Volta?",
+    "options": ["Burkina Faso", "Mali", "Niger", "Chad"],
+    "answer": "Burkina Faso",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which medieval African empire was famously described by Arab scholars as richer than any kingdom in Europe?",
+    "options": [
+      "Mali Empire",
+      "Songhai Empire",
+      "Ghana Empire",
+      "Kanem-Bornu Empire"
+    ],
+    "answer": "Mali Empire",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which country has the longest written constitution still in use today?",
+    "options": ["United States", "Norway", "Japan", "India"],
+    "answer": "United States",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What year did the Berlin Wall officially fall?",
+    "options": ["1989", "1990", "1987", "1991"],
+    "answer": "1989",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which ancient city is considered the oldest continuously inhabited city in the world?",
+    "options": ["Damascus", "Jericho", "Athens", "Byblos"],
+    "answer": "Damascus",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which European country has the highest number of UNESCO World Heritage Sites?",
+    "options": ["Italy", "Spain", "France", "Germany"],
+    "answer": "Italy",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "The Opium Wars were primarily fought between China and which country?",
+    "options": ["United Kingdom", "France", "Japan", "Portugal"],
+    "answer": "United Kingdom",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which empire built the city of Machu Picchu?",
+    "options": [
+      "Inca Empire",
+      "Aztec Empire",
+      "Maya Empire",
+      "Olmec Civilization"
+    ],
+    "answer": "Inca Empire",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which country was the last to abolish slavery in the Americas?",
+    "options": ["Brazil", "Cuba", "United States", "Haiti"],
+    "answer": "Brazil",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What was the codename for the Allied invasion of Normandy in World War II?",
+    "options": [
+      "Operation Overlord",
+      "Operation Torch",
+      "Operation Market Garden",
+      "Operation Barbarossa"
+    ],
+    "answer": "Operation Overlord",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which country has the highest number of time zones when including overseas territories?",
+    "options": ["France", "Russia", "United States", "United Kingdom"],
+    "answer": "France",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which civilization constructed the city of Carthage?",
+    "options": ["Phoenicians", "Romans", "Greeks", "Egyptians"],
+    "answer": "Phoenicians",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What was the original purpose of the Magna Carta signed in 1215?",
+    "options": [
+      "Limit royal power",
+      "Establish democracy",
+      "Unify England",
+      "End feudalism"
+    ],
+    "answer": "Limit royal power",
+    "category": "general",
+    "difficulty": "hard"
   }
 ]
