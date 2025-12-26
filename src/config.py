@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-UPLOAD_EVERY_HOURS = int(os.getenv("UPLOAD_EVERY_HOURS", "12"))
+UPLOAD_EVERY_HOURS = int(os.getenv("UPLOAD_EVERY_HOURS", "18"))
 COMMENT_DELAY_HOURS = int(os.getenv("COMMENT_DELAY_HOURS", "24"))
 
 MONGO_URI = os.getenv("MONGO_URI", "")
