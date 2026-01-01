@@ -1,7 +1,8 @@
 from datetime import datetime, timedelta, timezone
+from pymongo.errors import PyMongoError
 
 from .config import UPLOAD_EVERY_HOURS, COMMENT_DELAY_HOURS
-from .db import uploads
+from . import db
 from .main import main as run_once
 from .youtube_commenter import comment_answer
 
@@ -11,27 +12,37 @@ def now():
 
 
 def should_upload():
-    last = uploads.find_one(
-        {"uploaded_at": {"$exists": True}},
-        sort=[("uploaded_at", -1)],
-    )
+    try:
+        uploads = db.uploads
 
-    if not last:
-        return True
+        last = uploads.find_one(
+            {"uploaded_at": {"$exists": True}},
+            sort=[("uploaded_at", -1)],
+        )
 
-    uploaded_at = last["uploaded_at"]
+        if not last:
+            return True
 
-    # Normalize Mongo datetime → UTC-aware
-    if uploaded_at.tzinfo is None:
-        uploaded_at = uploaded_at.replace(tzinfo=timezone.utc)
+        uploaded_at = last["uploaded_at"]
+        if uploaded_at.tzinfo is None:
+            uploaded_at = uploaded_at.replace(tzinfo=timezone.utc)
 
-    delta = now() - uploaded_at
-    return delta >= timedelta(hours=UPLOAD_EVERY_HOURS)
+        return (now() - uploaded_at) >= timedelta(hours=UPLOAD_EVERY_HOURS)
+
+    except PyMongoError as e:
+        print("⚠️ Mongo unavailable → skipping upload check:", e)
+        return False
 
 
 def handle_upload():
     print("📤 Uploading new video...")
+
+    uploads = db.uploads  # ✅ FIX (THIS WAS MISSING)
+
     result = run_once()
+
+    if not result or "video_id" not in result:
+        raise RuntimeError("run_once() returned invalid result")
 
     uploads.insert_one(
         {
@@ -50,32 +61,40 @@ def handle_upload():
 
 
 def handle_comments():
-    due = uploads.find(
-        {
-            "commented": False,
-            "uploaded_at": {"$lte": now() - timedelta(hours=COMMENT_DELAY_HOURS)},
-        }
-    )
+    try:
+        uploads = db.uploads
 
-    for item in due:
-        try:
-            print("💬 Commenting answer on:", item["video_id"])
-            comment_answer(item["video_id"], item["answer"])
-
-            uploads.update_one(
-                {"_id": item["_id"]},
-                {
-                    "$set": {
-                        "commented": True,
-                        "commented_at": now(),
-                    }
+        due = uploads.find(
+            {
+                "commented": False,
+                "uploaded_at": {
+                    "$lte": now() - timedelta(hours=COMMENT_DELAY_HOURS)
                 },
-            )
+            }
+        )
 
-            print("✅ Commented")
+        for item in due:
+            try:
+                print("💬 Commenting answer on:", item["video_id"])
+                comment_answer(item["video_id"], item["answer"])
 
-        except Exception as e:
-            print("❌ Comment failed:", e)
+                uploads.update_one(
+                    {"_id": item["_id"]},
+                    {
+                        "$set": {
+                            "commented": True,
+                            "commented_at": now(),
+                        }
+                    },
+                )
+
+                print("✅ Commented:", item["video_id"])
+
+            except Exception as e:
+                print("❌ Comment failed for", item["video_id"], "→", e)
+
+    except PyMongoError as e:
+        print("⚠️ Mongo unavailable → skipping comments:", e)
 
 
 def run():
