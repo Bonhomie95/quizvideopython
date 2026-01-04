@@ -74,7 +74,10 @@ def main():
         # =========================
         # BASE QUIZ FRAMES
         # =========================
-        last_frame = render_quiz_frames(q, base_frames_dir)
+        quiz_result = render_quiz_frames(q, base_frames_dir)
+        last_frame = quiz_result["frames"]
+        hook_text = quiz_result["hook"]
+
         print("🎞 Quiz frames rendered up to:", last_frame)
 
         # =====================================================
@@ -112,7 +115,8 @@ def main():
         else:
             video_id = upload_short(
                 yt_video_path,
-                title=YOUTUBE_PLATFORM["title"](q),
+                # title=YOUTUBE_PLATFORM["title"](q),
+                title=quiz_result["title"],
                 description=YOUTUBE_PLATFORM["description"](q),
             )
 
