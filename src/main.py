@@ -23,6 +23,18 @@ from .config import DRY_RUN, CACHE_DIR
 FPS = 30
 
 
+# =====================================================
+# HASHTAGS (GENERAL QUIZ – SAFE DEFAULT)
+# =====================================================
+YT_HASHTAGS = (
+    "#shorts #quiz #trivia #brainchallenge "
+    "#canYouAnswer #noGoogle #beHonest #thinkFast #viral"
+)
+
+
+# =====================================================
+# HELPERS
+# =====================================================
 def _copy_quiz_frames(src_dir: str, dst_dir: str):
     os.makedirs(dst_dir, exist_ok=True)
     for name in os.listdir(src_dir):
@@ -45,6 +57,32 @@ def _cache_key(q: dict) -> str:
     return hashlib.sha1(raw).hexdigest()[:16]
 
 
+def build_yt_title(hook: str) -> str:
+    """
+    Short, punchy, hook-based title for Shorts
+    """
+    return hook.strip()
+
+
+def build_yt_description(q: dict, hook: str) -> str:
+    """
+    Hook + question + CTA + hashtags
+    """
+    return f"""
+{hook}
+
+🧠 Question:
+{q['question']}
+
+👇 Comment your answer before checking!
+
+{YT_HASHTAGS}
+""".strip()
+
+
+# =====================================================
+# MAIN
+# =====================================================
 def main():
     print("🚀 main() entered")
 
@@ -79,6 +117,10 @@ def main():
         hook_text = quiz_result["hook"]
 
         print("🎞 Quiz frames rendered up to:", last_frame)
+        print("🪝 Hook used:", hook_text)
+
+        yt_title = build_yt_title(hook_text)
+        yt_description = build_yt_description(q, hook_text)
 
         # =====================================================
         # YOUTUBE (CTA + BUILD + UPLOAD)
@@ -115,9 +157,8 @@ def main():
         else:
             video_id = upload_short(
                 yt_video_path,
-                # title=YOUTUBE_PLATFORM["title"](q),
-                title=quiz_result["title"],
-                description=YOUTUBE_PLATFORM["description"](q),
+                title=yt_title,
+                description=yt_description,
             )
 
         if video_id:
@@ -138,24 +179,19 @@ def main():
         fb_frames_dir = tempfile.mkdtemp(prefix="quiz_fb_frames_")
         _copy_quiz_frames(base_frames_dir, fb_frames_dir)
 
-        print("🎯 Rendering CTA for Facebook")
-        fb_cta_frames = render_cta_frames(
+        render_cta_frames(
             frames_dir=fb_frames_dir,
             start_index=last_frame + 1,
             platform=FACEBOOK_PLATFORM,
         )
-        if not isinstance(fb_cta_frames, int):
-            raise RuntimeError("CTA renderer must return frame count")
 
-        fb_video_path = build_video(
+        results["facebook_video_path"] = build_video(
             frames_dir=fb_frames_dir,
             output_dir="output/renders",
             fps=FPS,
             music=music,
             prefix="facebook",
         )
-
-        results["facebook_video_path"] = fb_video_path
         shutil.rmtree(fb_frames_dir, ignore_errors=True)
 
         # =====================================================
@@ -164,27 +200,23 @@ def main():
         tt_frames_dir = tempfile.mkdtemp(prefix="quiz_tt_frames_")
         _copy_quiz_frames(base_frames_dir, tt_frames_dir)
 
-        print("🎯 Rendering CTA for TikTok")
-        tt_cta_frames = render_cta_frames(
+        render_cta_frames(
             frames_dir=tt_frames_dir,
             start_index=last_frame + 1,
             platform=TIKTOK_PLATFORM,
         )
-        if not isinstance(tt_cta_frames, int):
-            raise RuntimeError("CTA renderer must return frame count")
 
-        tt_video_path = build_video(
+        results["tiktok_video_path"] = build_video(
             frames_dir=tt_frames_dir,
             output_dir="output/renders",
             fps=FPS,
             music=music,
             prefix="tiktok",
         )
-
-        results["tiktok_video_path"] = tt_video_path
         shutil.rmtree(tt_frames_dir, ignore_errors=True)
 
         print("✅ DONE:", results)
+
         return {
             "video_id": results.get("youtube"),
             "question": q["question"],
