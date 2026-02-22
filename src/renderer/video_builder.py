@@ -15,7 +15,7 @@ def build_video(
     ts = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
     out = os.path.join(output_dir, f"{prefix}_{ts}.mp4")
 
-    frames_input = os.path.join(frames_dir, "frame_%04d.png")
+    frames_input = os.path.join(frames_dir, "frame_%05d.png")
 
     cmd = [
         "ffmpeg",
@@ -39,7 +39,7 @@ def build_video(
         out,
     ]
 
-    print("[BUILD] FFmpeg cmd:", " ".join(cmd))
+    print("[BUILD] FFmpeg cmd:", " ".join(map(str, cmd)))
     subprocess.run(cmd, check=True)
 
     return out

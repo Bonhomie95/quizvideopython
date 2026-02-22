@@ -11,6 +11,7 @@ from .watermark import apply_watermark
 from ..config import OUTPUT_DIR, FONTS_DIR, MUSIC_DIR
 from ..utils.text import wrap_lines
 from ..utils.wiki_images import get_cached_image, fetch_and_cache_image
+from .timer_overlay import draw_timer
 
 
 # =========================================================
@@ -222,6 +223,115 @@ def fit_text(draw, text, font_path, max_size, min_size, max_width):
 
 def preload_option_images(options):
     return {v: get_cached_image(v) or fetch_and_cache_image(v) for v in options}
+
+
+def draw_header(draw, q):
+    category = (q.get("category") or "general").upper()
+    difficulty = (q.get("difficulty") or "easy").upper()
+
+    font = load_font("Inter-Bold.ttf", 64)
+
+    text = f"{category}   •   {difficulty}"
+
+    # background pill
+    padding_x = 60
+    padding_y = 30
+    w = draw.textlength(text, font=font)
+    h = font.size
+
+    x0 = (W - w) // 2 - padding_x
+    y0 = 70
+    x1 = (W + w) // 2 + padding_x
+    y1 = y0 + h + padding_y
+
+    draw.rounded_rectangle((x0, y0, x1, y1), radius=40, fill=(0, 0, 0, 180))
+
+    draw.text(
+        (W // 2, y0 + padding_y // 2),
+        text,
+        fill=(255, 255, 255),
+        anchor="ma",
+        font=font,
+    )
+
+
+# =========================================================
+# QUESTION SCREEN (STATIC PER FRAME)
+# =========================================================
+def draw_question_frame(frames_dir: str, start_frame: int, q: dict, total_frames: int):
+    font_question = load_font("Inter-Bold.ttf", 56)
+    font_opt = load_font("Inter-Regular.ttf", 42)
+
+    question = wrap_lines(q["question"], 40)
+    question = "\n".join(question) if isinstance(question, list) else question
+
+    options = q.get("options", [])
+
+    for i in range(total_frames):
+        frame = start_frame + i
+
+        img = apply_dark_overlay(get_background(q.get("category")))
+        draw = ImageDraw.Draw(img)
+
+        # Question
+        draw_question_box(img, draw, question, font_question, 550)
+        draw_header(draw, q)
+
+        # Options
+        for idx, opt in enumerate(options):
+            label = f"{chr(65+idx)}. {opt}"
+            draw_text_shadow(draw, (220, 950 + idx * 120), label, font_opt)
+
+        # TIMER (must be after draw exists)
+        from .timer_overlay import draw_timer
+
+        draw_timer(draw, i, total_frames, W, H)
+
+        img.convert("RGB").save(os.path.join(frames_dir, f"frame_{frame:05d}.png"))
+
+    return total_frames
+
+
+# =========================================================
+# ANSWER SCREEN
+# =========================================================
+def draw_answer_frame(frames_dir: str, start_frame: int, q: dict, total_frames: int):
+    font_big = load_font("Inter-Bold.ttf", 90)
+    font_small = load_font("Inter-Regular.ttf", 50)
+
+    answer = q["answer"]
+
+    for i in range(total_frames):
+        frame = start_frame + i
+
+        img = apply_dark_overlay(get_background(q.get("category")))
+        draw = ImageDraw.Draw(img)
+
+        if i < int(0.2 * 30):
+            img.convert("RGB").save(os.path.join(frames_dir, f"frame_{frame:05d}.png"))
+            continue
+
+        # Title
+        draw.text(
+            (W // 2, H // 2 - 120),
+            "Correct Answer",
+            font=font_small,
+            fill=(255, 255, 255),
+            anchor="mm",
+        )
+
+        # Answer centered
+        draw.text(
+            (W // 2, H // 2 + 40),
+            answer,
+            font=font_big,
+            fill=(0, 255, 160),
+            anchor="mm",
+        )
+
+        img.convert("RGB").save(os.path.join(frames_dir, f"frame_{frame:05d}.png"))
+
+    return total_frames
 
 
 # =========================================================

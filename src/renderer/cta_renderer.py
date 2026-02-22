@@ -167,3 +167,87 @@ def render_cta_frames(frames_dir: str, start_index: int, platform: Dict):
 
     log("CTA", "CTA frames done")
     return total_frames
+
+
+def wrap_text(draw, text, font, max_width):
+    words = text.split()
+    lines = []
+    line = ""
+
+    for w in words:
+        test = (line + " " + w).strip()
+        if draw.textlength(test, font=font) <= max_width:
+            line = test
+        else:
+            lines.append(line)
+            line = w
+    if line:
+        lines.append(line)
+    return lines
+
+
+# =========================================================
+# TIMELINE CTA (SINGLE SCENE MODE)
+# Used by timeline renderer instead of platform CTA
+# =========================================================
+def draw_cta_frame(frames_dir: str, start_frame: int, text: str, total_frames: int):
+    """
+    Timeline CTA with icons + wrapped text
+    """
+
+    font = ImageFont.truetype(FONT_PATH, 64)
+    small_font = ImageFont.truetype(FONT_PATH, 54)
+    logo = load_logo()
+
+    # icon paths (put pngs in assets/icons/)
+    icons = [
+        "assets/icons/yt_like.png",
+        "assets/icons/yt_comment.png",
+        "assets/icons/yt_subscribe.png",
+    ]
+
+    loaded_icons = [safe_icon(p, 120) for p in icons if os.path.isfile(p)]
+
+    for i in range(total_frames):
+        frame_no = start_frame + i
+
+        img = Image.new("RGB", (W, H), (12, 12, 18))
+        draw = ImageDraw.Draw(img)
+
+        # Title
+        draw.text(
+            (W // 2, 600),
+            "SUBSCRIBE FOR DAILY QUIZ",
+            font=font,
+            fill=(255, 255, 255),
+            anchor="mm",
+        )
+
+        # Wrapped message
+        lines = wrap_text(draw, text, small_font, W * 0.8)
+        y = 800
+        for line in lines:
+            draw.text(
+                (W // 2, y), line, font=small_font, fill=(255, 200, 0), anchor="mm"
+            )
+            y += small_font.size + 15
+
+        # Icons row
+        if loaded_icons:
+            gap = 60
+            total_w = len(loaded_icons) * 120 + (len(loaded_icons) - 1) * gap
+            x = (W - total_w) // 2
+            y_icons = 1150
+
+            for idx, ic in enumerate(loaded_icons):
+                if i > idx * 8:  # stagger animation
+                    img.paste(ic, (x, y_icons), ic)
+                x += 120 + gap
+
+        # watermark
+        if logo:
+            img = apply_watermark(img, logo, i, corner="top-left", opacity=0.7)
+
+        img.convert("RGB").save(os.path.join(frames_dir, f"frame_{frame_no:05d}.png"))
+
+    return total_frames

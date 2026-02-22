@@ -1,172 +1,396 @@
 [
   {
-    "question": "Which country was the first to grant women the right to vote at a national level?",
-    "options": ["New Zealand", "Finland", "Norway", "Australia"],
-    "answer": "New Zealand",
+    "question": "Which blood type is known as the universal recipient?",
+    "options": ["A", "B", "AB positive", "O negative"],
+    "answer": "AB positive",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "easy"
   },
   {
-    "question": "What was the original name of the city now known as Istanbul?",
-    "options": ["Byzantium", "Constantinople", "Nicomedia", "Ephesus"],
-    "answer": "Byzantium",
+    "question": "What is the capital city of South Africa’s legislative branch?",
+    "options": ["Pretoria", "Cape Town", "Johannesburg", "Durban"],
+    "answer": "Cape Town",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "easy"
   },
   {
-    "question": "Which empire first introduced a standardized road system across three continents?",
+    "question": "Which organ in the human body is primarily responsible for filtering blood?",
+    "options": ["Liver", "Heart", "Kidneys", "Lungs"],
+    "answer": "Kidneys",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Who wrote 'Animal Farm'?",
     "options": [
-      "Roman Empire",
-      "Persian Empire",
-      "Ottoman Empire",
-      "Mongol Empire"
+      "George Orwell",
+      "Aldous Huxley",
+      "Ernest Hemingway",
+      "J.K. Rowling"
     ],
-    "answer": "Persian Empire",
+    "answer": "George Orwell",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "easy"
   },
   {
-    "question": "Which country has changed its capital city the most times in modern history?",
-    "options": ["Nigeria", "Brazil", "Pakistan", "Kazakhstan"],
-    "answer": "Kazakhstan",
+    "question": "Which gas makes up the majority of Earth's atmosphere?",
+    "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
+    "answer": "Nitrogen",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "easy"
   },
   {
-    "question": "The Treaty of Tordesillas in 1494 divided newly discovered lands between which two countries?",
+    "question": "What is the square root of 169?",
+    "options": ["11", "12", "13", "14"],
+    "answer": "13",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which continent is Argentina located in?",
+    "options": ["North America", "Europe", "South America", "Africa"],
+    "answer": "South America",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which scientist proposed the laws of planetary motion?",
+    "options": ["Newton", "Galileo", "Kepler", "Copernicus"],
+    "answer": "Kepler",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "question": "What is the freezing point of water in Fahrenheit?",
+    "options": ["0°F", "32°F", "50°F", "100°F"],
+    "answer": "32°F",
+    "category": "general",
+    "difficulty": "easy"
+  },
+  {
+    "question": "Which country uses the peso as its currency?",
+    "options": ["Spain", "Mexico", "Italy", "Germany"],
+    "answer": "Mexico",
+    "category": "general",
+    "difficulty": "easy"
+  },
+
+  {
+    "question": "What is the chemical formula for ammonia?",
+    "options": ["NH3", "NO2", "NH4", "N2H4"],
+    "answer": "NH3",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which empire was ruled by Julius Caesar?",
+    "options": ["Greek", "Roman", "Ottoman", "Persian"],
+    "answer": "Roman",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which African country has the largest population?",
+    "options": ["Egypt", "Nigeria", "Ethiopia", "DR Congo"],
+    "answer": "Nigeria",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What does HTTP stand for?",
     "options": [
-      "Spain and Portugal",
-      "England and France",
-      "Spain and France",
-      "Portugal and Netherlands"
+      "HyperText Transfer Protocol",
+      "High Transfer Text Protocol",
+      "Hyperlink Transmission Program",
+      "Host Transfer Terminal Process"
     ],
-    "answer": "Spain and Portugal",
+    "answer": "HyperText Transfer Protocol",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which planet has the most moons?",
+    "options": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+    "answer": "Saturn",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is the hardest tissue in the human body?",
+    "options": ["Bone", "Enamel", "Cartilage", "Dentin"],
+    "answer": "Enamel",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which country hosted the first modern Olympic Games?",
+    "options": ["France", "UK", "Greece", "USA"],
+    "answer": "Greece",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which element is required for thyroid hormone production?",
+    "options": ["Iron", "Iodine", "Calcium", "Zinc"],
+    "answer": "Iodine",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "Which language family does English belong to?",
+    "options": ["Romance", "Germanic", "Slavic", "Celtic"],
+    "answer": "Germanic",
+    "category": "general",
+    "difficulty": "medium"
+  },
+  {
+    "question": "What is 2^10?",
+    "options": ["256", "512", "1024", "2048"],
+    "answer": "1024",
+    "category": "general",
+    "difficulty": "medium"
+  },
+
+  {
+    "question": "Which particle determines the atomic number of an element?",
+    "options": ["Neutron", "Proton", "Electron", "Photon"],
+    "answer": "Proton",
     "category": "general",
     "difficulty": "hard"
   },
   {
-    "question": "Which ancient civilization is credited with the earliest known use of zero as a number?",
-    "options": ["Maya", "Babylonian", "Indian", "Egyptian"],
-    "answer": "Maya",
+    "question": "What is the derivative of ln(x)?",
+    "options": ["1/x", "x", "ln(x)", "e^x"],
+    "answer": "1/x",
     "category": "general",
     "difficulty": "hard"
   },
   {
-    "question": "What was the primary language of administration in the Mughal Empire?",
-    "options": ["Persian", "Urdu", "Arabic", "Sanskrit"],
-    "answer": "Persian",
+    "question": "Which philosopher wrote 'Leviathan'?",
+    "options": ["Hobbes", "Locke", "Rousseau", "Kant"],
+    "answer": "Hobbes",
     "category": "general",
     "difficulty": "hard"
   },
   {
-    "question": "Which country was formerly known as Upper Volta?",
-    "options": ["Burkina Faso", "Mali", "Niger", "Chad"],
-    "answer": "Burkina Faso",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which medieval African empire was famously described by Arab scholars as richer than any kingdom in Europe?",
+    "question": "Which ocean current regulates Western Europe's climate?",
     "options": [
-      "Mali Empire",
-      "Songhai Empire",
-      "Ghana Empire",
-      "Kanem-Bornu Empire"
+      "Canary Current",
+      "Gulf Stream",
+      "Benguela Current",
+      "Kuroshio Current"
     ],
+    "answer": "Gulf Stream",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "What is the pH of pure water at 25°C?",
+    "options": ["6", "7", "8", "9"],
+    "answer": "7",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which war ended with the Treaty of Versailles?",
+    "options": [
+      "World War I",
+      "World War II",
+      "Crimean War",
+      "Franco-Prussian War"
+    ],
+    "answer": "World War I",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which law relates voltage, current, and resistance?",
+    "options": ["Hooke’s law", "Ohm’s law", "Faraday’s law", "Ampere’s law"],
+    "answer": "Ohm’s law",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which structure produces ATP in cells?",
+    "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi"],
+    "answer": "Mitochondria",
+    "category": "general",
+    "difficulty": "hard"
+  },
+  {
+    "question": "Which African empire succeeded the Ghana Empire?",
+    "options": ["Mali Empire", "Songhai Empire", "Benin Empire", "Axum"],
     "answer": "Mali Empire",
     "category": "general",
     "difficulty": "hard"
   },
   {
-    "question": "Which country has the longest written constitution still in use today?",
-    "options": ["United States", "Norway", "Japan", "India"],
-    "answer": "United States",
+    "question": "What is the SI unit of pressure?",
+    "options": ["Joule", "Pascal", "Newton", "Watt"],
+    "answer": "Pascal",
     "category": "general",
     "difficulty": "hard"
   },
+
   {
-    "question": "What year did the Berlin Wall officially fall?",
-    "options": ["1989", "1990", "1987", "1991"],
-    "answer": "1989",
+    "question": "Which element has the electron configuration ending in 4f14 5d10 6s2?",
+    "options": ["Mercury", "Gold", "Lead", "Tungsten"],
+    "answer": "Mercury",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "impossible"
   },
   {
-    "question": "Which ancient city is considered the oldest continuously inhabited city in the world?",
-    "options": ["Damascus", "Jericho", "Athens", "Byblos"],
-    "answer": "Damascus",
+    "question": "Which mathematician proved that π is transcendental?",
+    "options": ["Euler", "Gauss", "Lindemann", "Riemann"],
+    "answer": "Lindemann",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "impossible"
   },
   {
-    "question": "Which European country has the highest number of UNESCO World Heritage Sites?",
-    "options": ["Italy", "Spain", "France", "Germany"],
-    "answer": "Italy",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "The Opium Wars were primarily fought between China and which country?",
-    "options": ["United Kingdom", "France", "Japan", "Portugal"],
-    "answer": "United Kingdom",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which empire built the city of Machu Picchu?",
+    "question": "What type of star is Betelgeuse?",
     "options": [
-      "Inca Empire",
-      "Aztec Empire",
-      "Maya Empire",
-      "Olmec Civilization"
+      "White dwarf",
+      "Red supergiant",
+      "Neutron star",
+      "Yellow dwarf"
     ],
-    "answer": "Inca Empire",
+    "answer": "Red supergiant",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "impossible"
   },
   {
-    "question": "Which country was the last to abolish slavery in the Americas?",
-    "options": ["Brazil", "Cuba", "United States", "Haiti"],
-    "answer": "Brazil",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "What was the codename for the Allied invasion of Normandy in World War II?",
+    "question": "Which treaty formally ended the Napoleonic Wars?",
     "options": [
-      "Operation Overlord",
-      "Operation Torch",
-      "Operation Market Garden",
-      "Operation Barbarossa"
+      "Treaty of Tordesillas",
+      "Congress of Vienna",
+      "Treaty of Utrecht",
+      "Treaty of Paris 1763"
     ],
-    "answer": "Operation Overlord",
+    "answer": "Congress of Vienna",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "impossible"
   },
   {
-    "question": "Which country has the highest number of time zones when including overseas territories?",
-    "options": ["France", "Russia", "United States", "United Kingdom"],
-    "answer": "France",
+    "question": "What is the half-life of Carbon-14 approximately?",
+    "options": ["5730 years", "1030 years", "12,000 years", "1 million years"],
+    "answer": "5730 years",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "impossible"
   },
   {
-    "question": "Which civilization constructed the city of Carthage?",
-    "options": ["Phoenicians", "Romans", "Greeks", "Egyptians"],
-    "answer": "Phoenicians",
+    "question": "Which language is closest to Old Norse?",
+    "options": ["German", "Icelandic", "Dutch", "English"],
+    "answer": "Icelandic",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "impossible"
   },
   {
-    "question": "What was the original purpose of the Magna Carta signed in 1215?",
+    "question": "Which mathematician developed non-Euclidean geometry independently of Lobachevsky?",
+    "options": ["Gauss", "Riemann", "Hilbert", "Cantor"],
+    "answer": "Gauss",
+    "category": "general",
+    "difficulty": "impossible"
+  },
+  {
+    "question": "Which particle is responsible for the strong nuclear force?",
+    "options": ["Photon", "Gluon", "Graviton", "Muon"],
+    "answer": "Gluon",
+    "category": "general",
+    "difficulty": "impossible"
+  },
+  {
+    "question": "Which empire used the administrative system called the 'satrapy'?",
+    "options": ["Roman", "Persian", "Ottoman", "Byzantine"],
+    "answer": "Persian",
+    "category": "general",
+    "difficulty": "impossible"
+  },
+  {
+    "question": "What is the main component of neutron stars?",
     "options": [
-      "Limit royal power",
-      "Establish democracy",
-      "Unify England",
-      "End feudalism"
+      "Hydrogen plasma",
+      "Degenerate neutrons",
+      "Dark matter",
+      "Helium fusion"
     ],
-    "answer": "Limit royal power",
+    "answer": "Degenerate neutrons",
     "category": "general",
-    "difficulty": "hard"
+    "difficulty": "impossible"
+  },
+
+  {
+    "question": "What is the solution to the integral ∫(1/x) dx?",
+    "options": ["ln|x| + C", "1/x + C", "x + C", "e^x + C"],
+    "answer": "ln|x| + C",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "Which constant relates energy and frequency in quantum mechanics?",
+    "options": [
+      "Boltzmann constant",
+      "Planck constant",
+      "Avogadro constant",
+      "Faraday constant"
+    ],
+    "answer": "Planck constant",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "Which logician proved the incompleteness theorems?",
+    "options": ["Gödel", "Turing", "Russell", "Frege"],
+    "answer": "Gödel",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "Which empire destroyed the Byzantine Empire in 1453?",
+    "options": ["Mongol", "Ottoman", "Persian", "Arab"],
+    "answer": "Ottoman",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "What is the rank of a matrix if its determinant is zero?",
+    "options": ["Full rank", "Less than full rank", "Always 1", "Undefined"],
+    "answer": "Less than full rank",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "Which particle is its own antiparticle?",
+    "options": ["Electron", "Photon", "Proton", "Neutron"],
+    "answer": "Photon",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "Which mathematician invented the Turing machine concept?",
+    "options": ["Church", "Gödel", "Turing", "Shannon"],
+    "answer": "Turing",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "What is the curvature of flat spacetime in general relativity?",
+    "options": ["Zero", "Infinite", "Negative", "Positive"],
+    "answer": "Zero",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "Which element has the highest electronegativity?",
+    "options": ["Oxygen", "Fluorine", "Chlorine", "Nitrogen"],
+    "answer": "Fluorine",
+    "category": "general",
+    "difficulty": "genius"
+  },
+  {
+    "question": "Which number system underlies modern computer logic gates?",
+    "options": ["Decimal", "Binary", "Octal", "Roman"],
+    "answer": "Binary",
+    "category": "general",
+    "difficulty": "genius"
   }
 ]

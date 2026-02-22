@@ -1,30 +1,27 @@
 print("🔥 MAIN FILE LOADED")
 
-from datetime import datetime, timedelta
+from datetime import datetime
 import os
 import tempfile
 import shutil
 import hashlib
 import json
+import subprocess
 
-from .picker import pick_question
-from .renderer.quiz_renderer import render_quiz_frames, pick_music
-from .renderer.cta_renderer import render_cta_frames
+from .picker_episode import build_episode
+from .audio.narrator import generate_episode_audio
+from .audio.timeline import build_timeline
+from .renderer.scene_renderer import render_scene
+from .renderer.timeline_renderer import group_timeline
 from .renderer.video_builder import build_video
 
-from .platforms.youtube import YOUTUBE_PLATFORM
-from .platforms.facebook import FACEBOOK_PLATFORM
-from .platforms.tiktok import TIKTOK_PLATFORM
-
-from .youtube_uploader import upload_short
-from .db import save_pending_comment
+from .youtube_uploader import upload_short, post_comment
 from .config import DRY_RUN, CACHE_DIR
 
 FPS = 30
 
-
 # =====================================================
-# HASHTAGS (GENERAL QUIZ – SAFE DEFAULT)
+# HASHTAGS
 # =====================================================
 YT_HASHTAGS = (
     "#shorts #quiz #trivia #brainchallenge "
@@ -33,51 +30,24 @@ YT_HASHTAGS = (
 
 
 # =====================================================
-# HELPERS
+# YOUTUBE META
 # =====================================================
-def _copy_quiz_frames(src_dir: str, dst_dir: str):
-    os.makedirs(dst_dir, exist_ok=True)
-    for name in os.listdir(src_dir):
-        if name.startswith("frame_") and name.endswith(".png"):
-            shutil.copy2(
-                os.path.join(src_dir, name),
-                os.path.join(dst_dir, name),
-            )
-
-
-def _cache_key(q: dict) -> str:
-    payload = {
-        "question": q.get("question"),
-        "options": q.get("options"),
-        "answer": q.get("answer"),
-        "category": q.get("category"),
-        "difficulty": q.get("difficulty"),
-    }
-    raw = json.dumps(payload, sort_keys=True).encode("utf-8")
-    return hashlib.sha1(raw).hexdigest()[:16]
-
-
 def build_yt_title(hook: str) -> str:
-    """
-    Short, punchy, hook-based title for Shorts
-    """
-    return hook.strip()
+    return f"{hook} | 5 Question Quiz"
 
 
-def build_yt_description(q: dict, hook: str) -> str:
-    """
-    Hook + question + CTA + hashtags
-    """
-    return f"""
-{hook}
+def build_yt_description(episode: dict, hook: str) -> str:
+    lines = [hook, "", "🧠 QUESTIONS:"]
 
-🧠 Question:
-{q['question']}
+    for i, q in enumerate(episode["questions"], 1):
+        lines.append(f"{i}. {q['question']}")
 
-👇 Comment your answer before checking!
+    lines.append("")
+    lines.append("👇 Comment how many you got right!")
+    lines.append("")
+    lines.append(YT_HASHTAGS)
 
-{YT_HASHTAGS}
-""".strip()
+    return "\n".join(lines)
 
 
 # =====================================================
@@ -87,150 +57,113 @@ def main():
     print("🚀 main() entered")
 
     # =========================
-    # PICK QUESTION
+    # BUILD EPISODE
     # =========================
-    q = pick_question()
-    print("🧠 Question picked:", q["question"])
+    episode = build_episode()
 
-    key = _cache_key(q)
-    os.makedirs(CACHE_DIR, exist_ok=True)
+    print("\n🎬 EPISODE GENERATED")
+    print("Hook:", episode["hook"])
+    print("Outro:", episode["outro"])
 
-    cached_yt = os.path.join(CACHE_DIR, f"youtube_{key}.mp4")
+    for i, q in enumerate(episode["questions"], 1):
+        print(f"{i}. [{q['difficulty'].upper()}] {q['question']}")
 
     # =========================
-    # PICK MUSIC ONCE (GLOBAL)
+    # AUDIO GENERATION
     # =========================
-    music = pick_music()
-    print("🎵 Picked music for ALL platforms:", music)
+    print("\n🔊 Generating narration...")
+    audio_files = generate_episode_audio(episode)
 
-    base_frames_dir = tempfile.mkdtemp(prefix="quiz_base_frames_")
-    print("📂 Base frames dir:", base_frames_dir)
+    print("🎬 Building master timeline...")
+    master_audio, timestamps = build_timeline(audio_files)
 
-    results = {}
+    # =========================
+    # SCENES
+    # =========================
+    print("\n🎞 Converting timeline to scenes...")
+    scenes = group_timeline(timestamps)
+
+    # =========================
+    # RENDER VIDEO
+    # =========================
+    frames_dir = tempfile.mkdtemp(prefix="episode_frames_")
+    final_video = None
 
     try:
-        # =========================
-        # BASE QUIZ FRAMES
-        # =========================
-        quiz_result = render_quiz_frames(q, base_frames_dir)
-        last_frame = quiz_result["frames"]
-        hook_text = quiz_result["hook"]
+        frame_index = 0
 
-        print("🎞 Quiz frames rendered up to:", last_frame)
-        print("🪝 Hook used:", hook_text)
+        print("\n🎨 Rendering video from scenes...")
+        for scene in scenes:
+            used = render_scene(scene, frame_index, frames_dir, episode)
+            frame_index += used
+            print(f"Rendered {scene['type']} → {used} frames")
 
-        yt_title = build_yt_title(hook_text)
-        yt_description = build_yt_description(q, hook_text)
+        print("🧩 Total frames:", frame_index)
 
-        # =====================================================
-        # YOUTUBE (CTA + BUILD + UPLOAD)
-        # =====================================================
-        yt_frames_dir = tempfile.mkdtemp(prefix="quiz_yt_frames_")
-        _copy_quiz_frames(base_frames_dir, yt_frames_dir)
-
-        print("🎯 Rendering CTA for YouTube")
-        yt_cta_frames = render_cta_frames(
-            frames_dir=yt_frames_dir,
-            start_index=last_frame + 1,
-            platform=YOUTUBE_PLATFORM,
-        )
-        if not isinstance(yt_cta_frames, int):
-            raise RuntimeError("CTA renderer must return frame count")
-
-        if os.path.isfile(cached_yt):
-            yt_video_path = cached_yt
-            print("♻️ Using cached YouTube video:", yt_video_path)
-        else:
-            yt_video_path = build_video(
-                frames_dir=yt_frames_dir,
-                output_dir="output/renders",
-                fps=FPS,
-                music=music,
-                prefix="youtube",
-            )
-            shutil.copy2(yt_video_path, cached_yt)
-            print("✅ Cached YouTube video:", cached_yt)
-
-        video_id = None
-        if DRY_RUN:
-            print("🧪 DRY_RUN=true → skipping YouTube upload")
-        else:
-            video_id = upload_short(
-                yt_video_path,
-                title=yt_title,
-                description=yt_description,
-            )
-
-        if video_id:
-            print("📤 Uploaded to YouTube:", video_id)
-            save_pending_comment(
-                video_id=video_id,
-                comment=f"✅ Correct answer: {q['answer']}",
-                run_at=datetime.utcnow() + timedelta(hours=24),
-            )
-
-        results["youtube"] = video_id
-        results["youtube_video_path"] = yt_video_path
-        shutil.rmtree(yt_frames_dir, ignore_errors=True)
-
-        # =====================================================
-        # FACEBOOK (CTA + BUILD ONLY)
-        # =====================================================
-        fb_frames_dir = tempfile.mkdtemp(prefix="quiz_fb_frames_")
-        _copy_quiz_frames(base_frames_dir, fb_frames_dir)
-
-        render_cta_frames(
-            frames_dir=fb_frames_dir,
-            start_index=last_frame + 1,
-            platform=FACEBOOK_PLATFORM,
-        )
-
-        results["facebook_video_path"] = build_video(
-            frames_dir=fb_frames_dir,
+        print("🎬 Building silent video...")
+        video_path = build_video(
+            frames_dir=frames_dir,
             output_dir="output/renders",
             fps=FPS,
-            music=music,
-            prefix="facebook",
-        )
-        shutil.rmtree(fb_frames_dir, ignore_errors=True)
-
-        # =====================================================
-        # TIKTOK (CTA + BUILD ONLY)
-        # =====================================================
-        tt_frames_dir = tempfile.mkdtemp(prefix="quiz_tt_frames_")
-        _copy_quiz_frames(base_frames_dir, tt_frames_dir)
-
-        render_cta_frames(
-            frames_dir=tt_frames_dir,
-            start_index=last_frame + 1,
-            platform=TIKTOK_PLATFORM,
+            music=None,
+            prefix="episode",
         )
 
-        results["tiktok_video_path"] = build_video(
-            frames_dir=tt_frames_dir,
-            output_dir="output/renders",
-            fps=FPS,
-            music=music,
-            prefix="tiktok",
+        print("🎤 Attaching narration audio...")
+        final_video = video_path.replace(".mp4", "_final.mp4")
+
+        subprocess.run(
+            [
+                "ffmpeg",
+                "-y",
+                "-i",
+                video_path,
+                "-i",
+                master_audio,
+                "-c:v",
+                "copy",
+                "-c:a",
+                "aac",
+                "-b:a",
+                "192k",
+                final_video,
+            ],
+            check=True,
         )
-        shutil.rmtree(tt_frames_dir, ignore_errors=True)
 
-        print("✅ DONE:", results)
-
-        return {
-            "video_id": results.get("youtube"),
-            "question": q["question"],
-            "answer": q["answer"],
-            "category": q["category"],
-            "difficulty": q["difficulty"],
-            "youtube_video_path": results.get("youtube_video_path"),
-            "facebook_video_path": results.get("facebook_video_path"),
-            "tiktok_video_path": results.get("tiktok_video_path"),
-        }
+        print("✅ Episode video ready:", final_video)
 
     finally:
-        shutil.rmtree(base_frames_dir, ignore_errors=True)
-        print("🧹 Base frames cleaned:", base_frames_dir)
+        shutil.rmtree(frames_dir, ignore_errors=True)
+        print("🧹 Temp frames removed")
+
+    # =========================
+    # UPLOAD TO YOUTUBE
+    # =========================
+    if not final_video:
+        print("❌ Video not created — skipping upload")
+        return None
+
+    title = build_yt_title(episode["hook"])
+    description = build_yt_description(episode, episode["hook"])
+
+    if DRY_RUN:
+        print("🧪 DRY RUN — skipping upload")
+        return final_video
+
+    print("📤 Uploading to YouTube...")
+    video_id = upload_short(final_video, title, description)
+
+    if video_id:
+        print("🗨 Posting answers comment...")
+
+        answers = "\n".join(
+            f"{i+1}. {q['answer']}" for i, q in enumerate(episode["questions"])
+        )
+
+        post_comment(video_id, f"✅ Answers:\n{answers}")
+
+    return final_video
 
 
 if __name__ == "__main__":
