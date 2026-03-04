@@ -1,396 +1,57 @@
 [
-  {
-    "question": "Which blood type is known as the universal recipient?",
-    "options": ["A", "B", "AB positive", "O negative"],
-    "answer": "AB positive",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "What is the capital city of South Africa’s legislative branch?",
-    "options": ["Pretoria", "Cape Town", "Johannesburg", "Durban"],
-    "answer": "Cape Town",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "Which organ in the human body is primarily responsible for filtering blood?",
-    "options": ["Liver", "Heart", "Kidneys", "Lungs"],
-    "answer": "Kidneys",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "Who wrote 'Animal Farm'?",
-    "options": [
-      "George Orwell",
-      "Aldous Huxley",
-      "Ernest Hemingway",
-      "J.K. Rowling"
-    ],
-    "answer": "George Orwell",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "Which gas makes up the majority of Earth's atmosphere?",
-    "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
-    "answer": "Nitrogen",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "What is the square root of 169?",
-    "options": ["11", "12", "13", "14"],
-    "answer": "13",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "Which continent is Argentina located in?",
-    "options": ["North America", "Europe", "South America", "Africa"],
-    "answer": "South America",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "Which scientist proposed the laws of planetary motion?",
-    "options": ["Newton", "Galileo", "Kepler", "Copernicus"],
-    "answer": "Kepler",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "What is the freezing point of water in Fahrenheit?",
-    "options": ["0°F", "32°F", "50°F", "100°F"],
-    "answer": "32°F",
-    "category": "general",
-    "difficulty": "easy"
-  },
-  {
-    "question": "Which country uses the peso as its currency?",
-    "options": ["Spain", "Mexico", "Italy", "Germany"],
-    "answer": "Mexico",
-    "category": "general",
-    "difficulty": "easy"
-  },
-
-  {
-    "question": "What is the chemical formula for ammonia?",
-    "options": ["NH3", "NO2", "NH4", "N2H4"],
-    "answer": "NH3",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "Which empire was ruled by Julius Caesar?",
-    "options": ["Greek", "Roman", "Ottoman", "Persian"],
-    "answer": "Roman",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "Which African country has the largest population?",
-    "options": ["Egypt", "Nigeria", "Ethiopia", "DR Congo"],
-    "answer": "Nigeria",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "What does HTTP stand for?",
-    "options": [
-      "HyperText Transfer Protocol",
-      "High Transfer Text Protocol",
-      "Hyperlink Transmission Program",
-      "Host Transfer Terminal Process"
-    ],
-    "answer": "HyperText Transfer Protocol",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "Which planet has the most moons?",
-    "options": ["Jupiter", "Saturn", "Uranus", "Neptune"],
-    "answer": "Saturn",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "What is the hardest tissue in the human body?",
-    "options": ["Bone", "Enamel", "Cartilage", "Dentin"],
-    "answer": "Enamel",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "Which country hosted the first modern Olympic Games?",
-    "options": ["France", "UK", "Greece", "USA"],
-    "answer": "Greece",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "Which element is required for thyroid hormone production?",
-    "options": ["Iron", "Iodine", "Calcium", "Zinc"],
-    "answer": "Iodine",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "Which language family does English belong to?",
-    "options": ["Romance", "Germanic", "Slavic", "Celtic"],
-    "answer": "Germanic",
-    "category": "general",
-    "difficulty": "medium"
-  },
-  {
-    "question": "What is 2^10?",
-    "options": ["256", "512", "1024", "2048"],
-    "answer": "1024",
-    "category": "general",
-    "difficulty": "medium"
-  },
-
-  {
-    "question": "Which particle determines the atomic number of an element?",
-    "options": ["Neutron", "Proton", "Electron", "Photon"],
-    "answer": "Proton",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "What is the derivative of ln(x)?",
-    "options": ["1/x", "x", "ln(x)", "e^x"],
-    "answer": "1/x",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which philosopher wrote 'Leviathan'?",
-    "options": ["Hobbes", "Locke", "Rousseau", "Kant"],
-    "answer": "Hobbes",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which ocean current regulates Western Europe's climate?",
-    "options": [
-      "Canary Current",
-      "Gulf Stream",
-      "Benguela Current",
-      "Kuroshio Current"
-    ],
-    "answer": "Gulf Stream",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "What is the pH of pure water at 25°C?",
-    "options": ["6", "7", "8", "9"],
-    "answer": "7",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which war ended with the Treaty of Versailles?",
-    "options": [
-      "World War I",
-      "World War II",
-      "Crimean War",
-      "Franco-Prussian War"
-    ],
-    "answer": "World War I",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which law relates voltage, current, and resistance?",
-    "options": ["Hooke’s law", "Ohm’s law", "Faraday’s law", "Ampere’s law"],
-    "answer": "Ohm’s law",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which structure produces ATP in cells?",
-    "options": ["Nucleus", "Mitochondria", "Ribosome", "Golgi"],
-    "answer": "Mitochondria",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "Which African empire succeeded the Ghana Empire?",
-    "options": ["Mali Empire", "Songhai Empire", "Benin Empire", "Axum"],
-    "answer": "Mali Empire",
-    "category": "general",
-    "difficulty": "hard"
-  },
-  {
-    "question": "What is the SI unit of pressure?",
-    "options": ["Joule", "Pascal", "Newton", "Watt"],
-    "answer": "Pascal",
-    "category": "general",
-    "difficulty": "hard"
-  },
-
-  {
-    "question": "Which element has the electron configuration ending in 4f14 5d10 6s2?",
-    "options": ["Mercury", "Gold", "Lead", "Tungsten"],
-    "answer": "Mercury",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "Which mathematician proved that π is transcendental?",
-    "options": ["Euler", "Gauss", "Lindemann", "Riemann"],
-    "answer": "Lindemann",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "What type of star is Betelgeuse?",
-    "options": [
-      "White dwarf",
-      "Red supergiant",
-      "Neutron star",
-      "Yellow dwarf"
-    ],
-    "answer": "Red supergiant",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "Which treaty formally ended the Napoleonic Wars?",
-    "options": [
-      "Treaty of Tordesillas",
-      "Congress of Vienna",
-      "Treaty of Utrecht",
-      "Treaty of Paris 1763"
-    ],
-    "answer": "Congress of Vienna",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "What is the half-life of Carbon-14 approximately?",
-    "options": ["5730 years", "1030 years", "12,000 years", "1 million years"],
-    "answer": "5730 years",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "Which language is closest to Old Norse?",
-    "options": ["German", "Icelandic", "Dutch", "English"],
-    "answer": "Icelandic",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "Which mathematician developed non-Euclidean geometry independently of Lobachevsky?",
-    "options": ["Gauss", "Riemann", "Hilbert", "Cantor"],
-    "answer": "Gauss",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "Which particle is responsible for the strong nuclear force?",
-    "options": ["Photon", "Gluon", "Graviton", "Muon"],
-    "answer": "Gluon",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "Which empire used the administrative system called the 'satrapy'?",
-    "options": ["Roman", "Persian", "Ottoman", "Byzantine"],
-    "answer": "Persian",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-  {
-    "question": "What is the main component of neutron stars?",
-    "options": [
-      "Hydrogen plasma",
-      "Degenerate neutrons",
-      "Dark matter",
-      "Helium fusion"
-    ],
-    "answer": "Degenerate neutrons",
-    "category": "general",
-    "difficulty": "impossible"
-  },
-
-  {
-    "question": "What is the solution to the integral ∫(1/x) dx?",
-    "options": ["ln|x| + C", "1/x + C", "x + C", "e^x + C"],
-    "answer": "ln|x| + C",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "Which constant relates energy and frequency in quantum mechanics?",
-    "options": [
-      "Boltzmann constant",
-      "Planck constant",
-      "Avogadro constant",
-      "Faraday constant"
-    ],
-    "answer": "Planck constant",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "Which logician proved the incompleteness theorems?",
-    "options": ["Gödel", "Turing", "Russell", "Frege"],
-    "answer": "Gödel",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "Which empire destroyed the Byzantine Empire in 1453?",
-    "options": ["Mongol", "Ottoman", "Persian", "Arab"],
-    "answer": "Ottoman",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "What is the rank of a matrix if its determinant is zero?",
-    "options": ["Full rank", "Less than full rank", "Always 1", "Undefined"],
-    "answer": "Less than full rank",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "Which particle is its own antiparticle?",
-    "options": ["Electron", "Photon", "Proton", "Neutron"],
-    "answer": "Photon",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "Which mathematician invented the Turing machine concept?",
-    "options": ["Church", "Gödel", "Turing", "Shannon"],
-    "answer": "Turing",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "What is the curvature of flat spacetime in general relativity?",
-    "options": ["Zero", "Infinite", "Negative", "Positive"],
-    "answer": "Zero",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "Which element has the highest electronegativity?",
-    "options": ["Oxygen", "Fluorine", "Chlorine", "Nitrogen"],
-    "answer": "Fluorine",
-    "category": "general",
-    "difficulty": "genius"
-  },
-  {
-    "question": "Which number system underlies modern computer logic gates?",
-    "options": ["Decimal", "Binary", "Octal", "Roman"],
-    "answer": "Binary",
-    "category": "general",
-    "difficulty": "genius"
-  }
+  {"question": "How many bones does an adult human have?", "options": ["196", "206", "216", "226"], "answer": "206", "category": "general", "difficulty": "easy"},
+  {"question": "Which country has the most natural lakes?", "options": ["Russia", "USA", "Brazil", "Canada"], "answer": "Canada", "category": "general", "difficulty": "easy"},
+  {"question": "What % of Earth is covered by water?", "options": ["61%", "71%", "81%", "51%"], "answer": "71%", "category": "general", "difficulty": "easy"},
+  {"question": "Which organ can regenerate itself?", "options": ["Heart", "Kidney", "Liver", "Brain"], "answer": "Liver", "category": "general", "difficulty": "easy"},
+  {"question": "How long does sunlight take to reach Earth?", "options": ["2 minutes", "8 minutes", "20 minutes", "1 hour"], "answer": "8 minutes", "category": "general", "difficulty": "easy"},
+  {"question": "Which country invented paper?", "options": ["Egypt", "India", "China", "Greece"], "answer": "China", "category": "general", "difficulty": "easy"},
+  {"question": "Most spoken language by native speakers?", "options": ["English", "Spanish", "Hindi", "Mandarin"], "answer": "Mandarin", "category": "general", "difficulty": "easy"},
+  {"question": "How many hearts does an octopus have?", "options": ["1", "2", "3", "4"], "answer": "3", "category": "general", "difficulty": "easy"},
+  {"question": "Which planet spins on its side?", "options": ["Saturn", "Neptune", "Uranus", "Mars"], "answer": "Uranus", "category": "general", "difficulty": "easy"},
+  {"question": "What is the largest ocean on Earth?", "options": ["Atlantic", "Indian", "Arctic", "Pacific"], "answer": "Pacific", "category": "general", "difficulty": "easy"},
+  {"question": "Which country has the longest coastline?", "options": ["Russia", "Australia", "Norway", "Canada"], "answer": "Canada", "category": "general", "difficulty": "medium"},
+  {"question": "What is the smallest country in the world?", "options": ["Monaco", "San Marino", "Vatican City", "Liechtenstein"], "answer": "Vatican City", "category": "general", "difficulty": "medium"},
+  {"question": "How many chromosomes does a human have?", "options": ["23", "44", "46", "48"], "answer": "46", "category": "general", "difficulty": "medium"},
+  {"question": "What is a diamond made of?", "options": ["Silicon", "Carbon", "Nitrogen", "Quartz"], "answer": "Carbon", "category": "general", "difficulty": "medium"},
+  {"question": "Which blood type is the universal donor?", "options": ["A+", "O-", "AB+", "B-"], "answer": "O-", "category": "general", "difficulty": "medium"},
+  {"question": "In what year did the Berlin Wall fall?", "options": ["1987", "1989", "1991", "1993"], "answer": "1989", "category": "general", "difficulty": "medium"},
+  {"question": "What is the largest organ in the human body?", "options": ["Brain", "Liver", "Skin", "Lungs"], "answer": "Skin", "category": "general", "difficulty": "medium"},
+  {"question": "Which country has the most time zones?", "options": ["Russia", "USA", "China", "France"], "answer": "France", "category": "general", "difficulty": "medium"},
+  {"question": "How many keys does a standard piano have?", "options": ["76", "82", "88", "96"], "answer": "88", "category": "general", "difficulty": "medium"},
+  {"question": "What % of your DNA do you share with a banana?", "options": ["10%", "35%", "50%", "60%"], "answer": "50%", "category": "general", "difficulty": "medium"},
+  {"question": "How many times does your heart beat per day?", "options": ["50,000", "86,000", "100,000", "120,000"], "answer": "100,000", "category": "general", "difficulty": "medium"},
+  {"question": "Which gas do plants absorb from the atmosphere?", "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"], "answer": "Carbon Dioxide", "category": "general", "difficulty": "medium"},
+  {"question": "Which animal has the highest blood pressure?", "options": ["Elephant", "Blue Whale", "Giraffe", "Horse"], "answer": "Giraffe", "category": "general", "difficulty": "medium"},
+  {"question": "How many muscles does it take to smile?", "options": ["6", "12", "17", "43"], "answer": "17", "category": "general", "difficulty": "medium"},
+  {"question": "What is the hottest planet in the solar system?", "options": ["Mercury", "Mars", "Venus", "Jupiter"], "answer": "Venus", "category": "general", "difficulty": "medium"},
+  {"question": "Which African country was never colonized?", "options": ["Ghana", "Ethiopia", "Nigeria", "Kenya"], "answer": "Ethiopia", "category": "general", "difficulty": "hard"},
+  {"question": "What fraction of an iceberg is above water?", "options": ["1/10", "1/5", "1/3", "1/2"], "answer": "1/10", "category": "general", "difficulty": "hard"},
+  {"question": "Which metal is liquid at room temperature?", "options": ["Iron", "Mercury", "Aluminum", "Lead"], "answer": "Mercury", "category": "general", "difficulty": "hard"},
+  {"question": "How many known moons does Saturn have?", "options": ["27", "53", "83", "146"], "answer": "146", "category": "general", "difficulty": "hard"},
+  {"question": "What % of the human brain is water?", "options": ["60%", "73%", "80%", "90%"], "answer": "73%", "category": "general", "difficulty": "hard"},
+  {"question": "How long can a cockroach survive without its head?", "options": ["1 day", "3 days", "1 week", "Several weeks"], "answer": "Several weeks", "category": "general", "difficulty": "hard"},
+  {"question": "Which country drinks the most coffee per capita?", "options": ["Italy", "USA", "Brazil", "Finland"], "answer": "Finland", "category": "general", "difficulty": "hard"},
+  {"question": "How deep is the Mariana Trench?", "options": ["7 km", "9 km", "11 km", "14 km"], "answer": "11 km", "category": "general", "difficulty": "hard"},
+  {"question": "How many languages are spoken in Nigeria?", "options": ["Over 100", "Over 200", "Over 300", "Over 500"], "answer": "Over 500", "category": "general", "difficulty": "hard"},
+  {"question": "What % of the ocean is still unexplored?", "options": ["20%", "50%", "70%", "80%"], "answer": "80%", "category": "general", "difficulty": "hard"},
+  {"question": "Which country has the most pyramids in the world?", "options": ["Egypt", "Mexico", "Sudan", "Peru"], "answer": "Sudan", "category": "general", "difficulty": "impossible"},
+  {"question": "How many scents can the human nose detect?", "options": ["10,000", "100,000", "1 trillion", "10 trillion"], "answer": "1 trillion", "category": "general", "difficulty": "impossible"},
+  {"question": "Which letter is NOT on the periodic table?", "options": ["J", "Q", "X", "Z"], "answer": "J", "category": "general", "difficulty": "impossible"},
+  {"question": "How long to walk to the Moon at normal pace?", "options": ["1 year", "5 years", "9 years", "27 years"], "answer": "9 years", "category": "general", "difficulty": "impossible"},
+  {"question": "What is the only food that never expires?", "options": ["Salt", "Sugar", "Honey", "Vinegar"], "answer": "Honey", "category": "general", "difficulty": "impossible"},
+  {"question": "Max times you can fold a paper in half?", "options": ["5", "7", "10", "Unlimited"], "answer": "7", "category": "general", "difficulty": "impossible"},
+  {"question": "How fast does a sneeze travel?", "options": ["50 mph", "100 mph", "160 mph", "200 mph"], "answer": "100 mph", "category": "general", "difficulty": "impossible"},
+  {"question": "Cleopatra was closer in time to the Moon landing than to the pyramids. True?", "options": ["True", "False", "Off by 10 yrs", "Same era"], "answer": "True", "category": "general", "difficulty": "impossible"},
+  {"question": "How many muscles does a caterpillar have?", "options": ["100", "500", "4,000", "10,000"], "answer": "4,000", "category": "general", "difficulty": "impossible"},
+  {"question": "Which is the only letter unused in all US state names?", "options": ["B", "Q", "X", "Z"], "answer": "Q", "category": "general", "difficulty": "impossible"},
+  {"question": "Which country has more volcanoes than any other?", "options": ["Japan", "Indonesia", "Philippines", "USA"], "answer": "Indonesia", "category": "general", "difficulty": "genius"},
+  {"question": "What is a group of flamingos called?", "options": ["Flock", "Colony", "Flamboyance", "Parliament"], "answer": "Flamboyance", "category": "general", "difficulty": "genius"},
+  {"question": "How long is a million seconds in days?", "options": ["~6 days", "~11 days", "~28 days", "~60 days"], "answer": "~11 days", "category": "general", "difficulty": "genius"},
+  {"question": "The word 'Algorithm' comes from whose name?", "options": ["Al-Khwarizmi", "Al-Farabi", "Aristotle", "Euclid"], "answer": "Al-Khwarizmi", "category": "general", "difficulty": "genius"},
+  {"question": "Dig through Earth from Africa — you land in?", "options": ["China", "Australia", "Pacific Ocean", "South America"], "answer": "Pacific Ocean", "category": "general", "difficulty": "genius"},
+  {"question": "Which country has been at war most in history?", "options": ["USA", "Russia", "UK", "France"], "answer": "UK", "category": "general", "difficulty": "genius"},
+  {"question": "Remove empty space from all human atoms — we'd fit in a...", "options": ["House", "Stadium", "Sugar cube", "Football field"], "answer": "Sugar cube", "category": "general", "difficulty": "genius"},
+  {"question": "Which ancient wonder still stands today?", "options": ["Colossus of Rhodes", "Lighthouse of Alexandria", "Great Pyramid of Giza", "Hanging Gardens"], "answer": "Great Pyramid of Giza", "category": "general", "difficulty": "genius"},
+  {"question": "How many possible chess games exist?", "options": ["More than atoms in universe", "1 billion", "1 trillion", "1 quadrillion"], "answer": "More than atoms in universe", "category": "general", "difficulty": "genius"},
+  {"question": "Which animal can survive in outer space?", "options": ["Cockroach", "Tardigrade", "Scorpion", "Jellyfish"], "answer": "Tardigrade", "category": "general", "difficulty": "genius"}
 ]

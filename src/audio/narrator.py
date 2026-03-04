@@ -12,11 +12,13 @@ LEVEL_NAMES = {
 
 
 def build_question_text(index, q):
-    return q["question"]
+    # Number prefix creates rhythm: "Question 1." pause before the question
+    return f"Question {index}. {q['question']}"
 
 
 def build_answer_text(q):
-    return f"The correct answer is {q['answer']}"
+    # Short and punchy — viewers want the answer fast
+    return f"The answer is... {q['answer']}"
 
 
 def generate_episode_audio(episode: dict, out_dir="output/cache/audio"):

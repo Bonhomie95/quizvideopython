@@ -1,7 +1,7 @@
 import asyncio
 from pathlib import Path
 
-VOICE = "en-US-GuyNeural"
+VOICE = "en-US-BrianNeural"
 
 
 # ---------------- EDGE TTS (ONLINE) ----------------

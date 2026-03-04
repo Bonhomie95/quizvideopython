@@ -10,7 +10,6 @@ from PIL import Image, ImageDraw, ImageFont
 from .watermark import apply_watermark
 from ..config import OUTPUT_DIR, FONTS_DIR, MUSIC_DIR
 from ..utils.text import wrap_lines
-from ..utils.wiki_images import get_cached_image, fetch_and_cache_image
 from .timer_overlay import draw_timer
 
 
@@ -18,7 +17,7 @@ from .timer_overlay import draw_timer
 # VIDEO CONSTANTS
 # =========================================================
 W, H, FPS = 1080, 1920, 30
-QUIZ_DURATION = 13
+QUIZ_DURATION = 9
 
 
 # =========================================================
@@ -38,27 +37,16 @@ CATEGORY_BG_MAP = {
 # =========================================================
 # HOOK TEXT
 # =========================================================
-HOOK_VARIANTS = [
-    "🔥 95% FAIL THIS",
-    "❌ MOST PEOPLE GET THIS WRONG",
-    "⚠️ DON’T BLINK",
-    "🤯 ONLY GENIUSES GET THIS",
-    "😅 NO GOOGLE",
-    "✅ BE HONEST",
+# Hook display colors — deterministic by hook text
+HOOK_DISPLAY_COLORS = [
+    (255, 220, 50), (80, 200, 255), (255, 100, 100),
+    (100, 255, 180), (255, 160, 50),
 ]
 
-HOOK_EMOJI_COLORS: Dict[str, Tuple[int, int, int]] = {
-    "🔥": (255, 140, 0),
-    "❌": (255, 60, 60),
-    "⚠️": (255, 215, 0),
-}
 
-
-def get_hook_color(text: str) -> Tuple[int, int, int]:
-    for emoji, color in HOOK_EMOJI_COLORS.items():
-        if emoji in text:
-            return color
-    return (255, 255, 255)
+def get_hook_color(text):
+    idx = sum(ord(c) for c in text) % len(HOOK_DISPLAY_COLORS)
+    return HOOK_DISPLAY_COLORS[idx]
 
 
 # =========================================================
@@ -100,15 +88,15 @@ except Exception:
 # =========================================================
 # TIMING – VERTICAL CASCADE
 # =========================================================
-STEP = int(0.25 * FPS)
+STEP = int(0.18 * FPS)
 
 CAT_DIFF_START = 0
 HOOK_START = CAT_DIFF_START + STEP
 QUESTION_START = HOOK_START + int(0.15 * FPS)
 OPTIONS_START = QUESTION_START + STEP
 
-QUESTION_SLIDE_FRAMES = int(0.5 * FPS)
-OPTION_STAGGER = int(0.5 * FPS)
+QUESTION_SLIDE_FRAMES = int(0.3 * FPS)
+OPTION_STAGGER = int(0.25 * FPS)
 
 
 # =========================================================
@@ -345,7 +333,7 @@ def render_quiz_frames(q: dict, frames_dir: str) -> Dict[str, Any]:
     font_question = load_font("Inter-Bold.ttf", 56)
     font_comment = load_font("Inter-Regular.ttf", 46)
 
-    hook_text = random.choice(HOOK_VARIANTS)
+    hook_text = q.get("_episode_hook", "Can you answer all 5?")
     hook_color = get_hook_color(hook_text)
     comment_text = random.choice(COMMENT_CTA_VARIANTS)
 
@@ -359,13 +347,11 @@ def render_quiz_frames(q: dict, frames_dir: str) -> Dict[str, Any]:
 
     question = wrap_lines(q["question"], 40)
     question = "\n".join(question) if isinstance(question, list) else question
-    question_img_path = get_cached_image(q["question"]) or fetch_and_cache_image(
-        q["question"]
-    )
+    question_img_path = None  # wiki images removed
 
     options = q.get("options", [])
     option_rows = [(chr(65 + i), opt, i) for i, opt in enumerate(options)]
-    option_images = preload_option_images(options)
+    option_images = {}  # wiki images removed
 
     logo = load_logo()
     total_frames = FPS * QUIZ_DURATION

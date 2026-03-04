@@ -12,11 +12,11 @@ def draw_hook(frame_path, text):
     img = Image.new("RGB", (WIDTH, HEIGHT))
     draw = ImageDraw.Draw(img)
 
-    # gradient background
+    # Deep dark gradient — bold, clean
     for y in range(HEIGHT):
-        r = int(20 + (120 - 20) * (y / HEIGHT))
-        g = int(40 + (60 - 40) * (y / HEIGHT))
-        b = int(90 + (200 - 90) * (y / HEIGHT))
+        r = int(8 + (15 - 8) * (y / HEIGHT))
+        g = int(8 + (18 - 8) * (y / HEIGHT))
+        b = int(18 + (35 - 18) * (y / HEIGHT))
         draw.line([(0, y), (WIDTH, y)], fill=(r, g, b))
 
     title_font = ImageFont.truetype(os.path.join(FONTS_DIR, "Inter-Bold.ttf"), 120)
@@ -25,7 +25,7 @@ def draw_hook(frame_path, text):
     # title
     draw.text(
         (WIDTH // 2, 520),
-        "QUIZ TIME",
+        "🧠 GENERAL KNOWLEDGE",
         fill=(255, 255, 255),
         anchor="mm",
         font=title_font,
@@ -46,7 +46,7 @@ def draw_hook(frame_path, text):
 
     y = 900
     for l in lines:
-        draw.text((WIDTH // 2, y), l, fill=(255, 230, 120), anchor="mm", font=hook_font)
+        draw.text((WIDTH // 2, y), l, fill=(255, 220, 60), anchor="mm", font=hook_font)
         y += hook_font.size + 20
 
     img.save(frame_path)
@@ -66,9 +66,9 @@ def render_scene(scene, frame_index, frames_dir, episode):
 
     if t.startswith("q"):
         q_index = int(t[1:]) - 1
-        return draw_question_frame(
-            frames_dir, frame_index, episode["questions"][q_index], scene["frames"]
-        )
+        q = dict(episode["questions"][q_index])
+        q["_episode_hook"] = episode.get("hook", "")
+        return draw_question_frame(frames_dir, frame_index, q, scene["frames"])
 
     if t.startswith("a"):
         q_index = int(t[1:]) - 1
